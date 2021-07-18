@@ -1,0 +1,14 @@
+extend layout.pug
+
+block listNavbar
+    ul(class="nav navbar-nav")
+        li
+            a(href="/") Home
+        li(class="active")
+            a(href="/about") About
+        li
+            a(href="/login") Login
+
+block content
+    h1 #{title}
+    p #{message}
