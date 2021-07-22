@@ -10,13 +10,12 @@ const { stringify } = require("querystring");
 
 const pool = mysql.createPool({
     connectionLimit : 100, //important
-    host     : 'localhost',
+    host     : '192.168.1.111',
     user     : 'root',
-    password : '',
-    database : 'unsafesite_db',
+    password : process.env.ROOT_KEY,
+    database : 'monsite',
     debug    :  false
 });
-
 
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "views"));
@@ -30,11 +29,12 @@ router.get("/about", (req, res) => {
 });
 
 router.get("/login", (req, res) => {
+  console.log(process.env.ROOT_KEY);
   res.render("login");
 });
 
 router.post("/login", (req, res) => {
-  let request= "SELECT * FROM site_user where name=? and password= ? "
+  let request= "SELECT * FROM user where name=? and password= ? "
   console.log(request)
   pool.query(request, [(req.body.uname), (req.body.psw)],(err, data) => {
     if(err) {
