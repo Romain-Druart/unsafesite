@@ -1,0 +1,28 @@
+//- layout.pug
+html
+    head
+        title Mon site
+        block scripts
+            script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js")
+            link(href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css", rel="stylesheet")
+            link(href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css", rel="stylesheet")
+            script("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js")
+    body
+            <div style="margin:100px;">
+                <nav class="navbar navbar-inverse navbar-static-top">
+                    <div class="container">
+                        <a class="navbar-brand" href="/">MonSite</a>
+                        block listNavbar
+                            ul(class="nav navbar-nav")
+                                li(class="active")
+                                    a(href="/") Home
+                                li
+                                    a(href="/about") About
+                                li
+                                    a(href="/login") Login
+                    </div>
+                </nav>
+                <div class="jumbotron"  style="padding:40px;">
+                    block content
+                </div>
+            </div>
