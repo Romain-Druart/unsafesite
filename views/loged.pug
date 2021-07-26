@@ -1,0 +1,13 @@
+extend layout.pug
+
+block listNavbar
+    ul(class="nav navbar-nav")
+        li
+            a(href="/") Home
+        li
+            a(href="/about") About
+        li(class="active")
+            a(href="/login") Login
+
+block content
+    img(src='./image/image_loged.jpg' alt='login' style='width:100px; height:100px;')
