@@ -6,8 +6,8 @@ const https = require("https");
 fs = require("fs");
 
 const options = {
-  // key: fs.readFileSync("/srv/www/keys/my-site-key.pem"),
-  // cert: fs.readFileSync("/srv/www/keys/chain.pem")
+  key: fs.readFileSync("/srv/www/keys/my-site-key.pem"),
+  cert: fs.readFileSync("/srv/www/keys/chain.pem")
 };
 
 app.use(express.urlencoded({ extended: true }), (req, res) => {
